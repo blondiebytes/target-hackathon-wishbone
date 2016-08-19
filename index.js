@@ -34,7 +34,6 @@ app.post('/webhook/', function (req, res) {
         if (event.message && event.message.text) {
             let text = event.message.text
             decideMessage(sender, text);
-            sendGenericMessage(sender);
             continue
         }
         if (event.postback) {
@@ -56,7 +55,7 @@ function decideMessage(sender, text1) {
 	} else if (text.includes("add to shopping cart")) {
 		sendTextMessage(sender, "Added to shopping cart!")
 	} else if (text.includes("no")) {
-		sendButtonMessage(sender, "I see it's summertime. Here are some things you might need for your baby shower.")
+		sendButtonMessage(sender, "I see it's summertime. Here are some things you might need.")
 	} else if (text.includes("sunscreen")) {
 		sendTextMessage(sender, "Here are some great deals on sunscreen!");
 		//sendGenericMessage2(sender);
@@ -316,20 +315,20 @@ function sendTextMessage(sender, text) {
     })
 }
 
-function sendGenericMessage(sender) {
+function sendGenericMessage1(sender) {
     let messageData = {
         "attachment": {
             "type": "template",
             "payload": {
                 "template_type": "generic",
                 "elements": [{
-                    "title": "First card",
-                    "subtitle": "Element #1 of an hscroll",
-                    "image_url": "http://messengerdemo.parseapp.com/img/rift.png",
+                    "title": "Invitations",
+                    "subtitle": "Here's our most popular invitation",
+                    "image_url": "http://scene7.targetimg1.com/is/image/Target/15406466?wid=1024&hei=1024&qlt=70&fmt=pjpeg",
                     "buttons": [{
                         "type": "web_url",
-                        "url": "https://www.messenger.com",
-                        "title": "web url"
+                        "url": "http://www.target.com/p/pink-baby-dots-invitations-with-photo-overlay-25-count/-/A-15406466",
+                        "title": "See Item"
                     }, {
                         "type": "postback",
                         "title": "Postback",
