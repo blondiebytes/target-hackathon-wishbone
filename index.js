@@ -58,7 +58,7 @@ function decideMessage(sender, text1) {
 		sendButtonMessage(sender, "I see it's summertime. Here are some things you might need.")
 	} else if (text.includes("sunscreen")) {
 		sendTextMessage(sender, "Here are some great deals on sunscreen!");
-		//sendGenericMessage2(sender);
+		sendGenericMessage2(sender);
 	} else if (text.includes("gift")) {
 		sendButtonMessage2(sender, "What is the occasion?");
 	} else if (text.includes("baby shower")) {
@@ -367,6 +367,73 @@ function sendGenericMessage1(sender) {
         }
     })
 }
+
+function sendGenericMessage2(sender) {
+    let messageData = {
+        "attachment": {
+            "type": "template",
+            "payload": {
+                "template_type": "generic",
+                "elements": [{
+                    "title": "Alba Botanica",
+                    "subtitle": "Element #2 of an hscroll",
+                    "image_url": "http://scene7.targetimg1.com/is/image/Target/16872833?wid=1024&hei=1024&qlt=70&fmt=pjpeg",
+                    "buttons": [{
+                        "type": "web_url",
+                        "url": "http://www.target.com/p/alba-botanica-emollient-sunscreen-active-kids-clear-spray-spf-50-6-oz/-/A-16872833",
+                        "title": "See Item"
+                    }, {
+                        "type": "postback",
+                        "title": "Add to Cart",
+                        "payload": "add to shopping cart",
+                    }],
+                }, {
+                    "title": "Neutrogena Beach Defense",
+                    "subtitle": "Element #2 of an hscroll",
+                    "image_url": "http://scene7.targetimg1.com/is/image/Target/50787513?wid=450&hei=450&fmt=pjpeg",
+                    "buttons": [{
+                        "type": "web_url",
+                        "url": "http://www.target.com/p/neutrogena-oh-joy-beach-defense-spray-sunscreen-broad-spectrum-spf-70-6-5-oz/-/A-50787513",
+                        "title": "See Item",
+                    }, {
+                    	"type": "postback",
+                        "title": "Add to Cart",
+                        "payload": "add to shopping cart",
+                    }],
+                }, {
+                    "title": "Coppertone Kids",
+                    "subtitle": "Element #2 of an hscroll",
+                    "image_url": "http://scene7.targetimg1.com/is/image/Target/50584700?wid=1024&hei=1024&qlt=70&fmt=pjpeg",
+                    "buttons": [{
+                        "type": "web_url",
+                        "url": "http://www.target.com/p/coppertone-kids-sunscreen-continuous-spray-spf-50/-/A-50584700",
+                        "title": "See Item",
+                    }, {
+                    	"type": "postback",
+                        "title": "Add to Cart",
+                        "payload": "add to shopping cart",
+                    }],
+                }]
+            }
+        }
+    }
+    request({
+        url: 'https://graph.facebook.com/v2.6/me/messages',
+        qs: {access_token:token},
+        method: 'POST',
+        json: {
+            recipient: {id:sender},
+            message: messageData,
+        }
+    }, function(error, response, body) {
+        if (error) {
+            console.log('Error sending messages: ', error)
+        } else if (response.body.error) {
+            console.log('Error: ', response.body.error)
+        }
+    })
+}
+
 
 
 
