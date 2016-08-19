@@ -51,7 +51,7 @@ function decideMessage(sender, text1) {
 	let text = text1.toLowerCase();
 	if (text.includes("baby shower") && text.includes("throwing")) {
 		sendTextMessage(sender, "Congrats! Do you need anything for your baby shower?");
-		//sendGenericMessage1(sender)
+		sendGenericMessage1(sender)
 	} else if (text.includes("add to shopping cart")) {
 		sendTextMessage(sender, "Added to shopping cart!")
 	} else if (text.includes("no")) {
@@ -323,7 +323,7 @@ function sendGenericMessage1(sender) {
                 "template_type": "generic",
                 "elements": [{
                     "title": "Invitations",
-                    "subtitle": "sendButtonMessage3",
+                    "subtitle": "Element #2 of an hscroll",
                     "image_url": "http://messengerdemo.parseapp.com/img/rift.png",
                     "buttons": [{
                         "type": "web_url",
