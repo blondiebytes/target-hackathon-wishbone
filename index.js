@@ -326,8 +326,8 @@ function sendGenericMessage1(sender) {
                     "image_url": "http://scene7.targetimg1.com/is/image/Target/15406466?wid=1024&hei=1024&qlt=70&fmt=pjpeg",
                     "buttons": [{
                         "type": "web_url",
-                        "url": "http://www.target.com/p/pink-baby-dots-invitations-with-photo-overlay-25-count/-/A-15406466",
-                        "title": "See Item"
+                        "url": "http://www.target.com/c/baby-shower-party-supplies/-/N-4soei%7Cd_item_type_all%3Ainvitation%20packs?Sort=Featured&clearCategId=4soei&Nao=0",
+                        "title": "See Items Like"
                     }, {
                         "type": "postback",
                         "title": "Add to Cart",
@@ -339,8 +339,8 @@ function sendGenericMessage1(sender) {
                     "image_url": "http://scene7.targetimg1.com/is/image/Target/50701956?wid=450&hei=450&fmt=pjpeg",
                     "buttons": [{
                         "type": "web_url",
-                        "url": "http://www.target.com/p/favor-bag-8-ea-multi-colored-creative-converting/-/A-50701956",
-                        "title": "See Item",
+                        "url": "http://www.target.com/c/baby-shower-party-supplies/-/N-4soei%7Cd_item_type_all%3AFavor%20Bag?Sort=Featured&clearCategId=4soei&Nao=0",
+                        "title": "See Items Like",
                     }, {
                     	"type": "postback",
                         "title": "Add to Cart",
