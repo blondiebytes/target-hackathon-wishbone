@@ -44,9 +44,7 @@ const token = "EAADPuY7AusgBAL5wNKMrokW32BgDCVESDwtXp0u4ytJ0gmxHB9LISBwGW2y6XFEi
 
 function decideMessage(sender, text1) {
 	let text = text1.toLowerCase();
-	if (text.includes("trip") && text.includes("minneapolis")) {
-		sendTextMessage(sender, "ok")
-	} else {
+	if (text.includes("baby shower")) {
 		sendButtonMessage(sender, text)
 	}
 }
