@@ -68,8 +68,7 @@ function decideMessage(sender, text1) {
 	} else if (text.includes("clothes")) {
 		sendTextMessage(sender, "Boy or girl?")
 	} else if (text.includes("boy")) {
-		sendButtonMessage5(sender, "Here are some essentials!")
-	} else if (text.includes("toys")) {
+		sendGenericMessage3(sender);
 	} else {
 		sendTextMessage(sender, "Can you ask again?");
 	}
@@ -323,7 +322,7 @@ function sendGenericMessage1(sender) {
                 "template_type": "generic",
                 "elements": [{
                     "title": "Invitations",
-                    "subtitle": "Element #2 of an hscroll",
+                    "subtitle": "Friends and Family Welcome!",
                     "image_url": "http://scene7.targetimg1.com/is/image/Target/15406466?wid=1024&hei=1024&qlt=70&fmt=pjpeg",
                     "buttons": [{
                         "type": "web_url",
@@ -336,7 +335,7 @@ function sendGenericMessage1(sender) {
                     }],
                 }, {
                     "title": "Favor Bags",
-                    "subtitle": "Element #2 of an hscroll",
+                    "subtitle": "Grab-and-go sweet treats",
                     "image_url": "http://scene7.targetimg1.com/is/image/Target/50701956?wid=450&hei=450&fmt=pjpeg",
                     "buttons": [{
                         "type": "web_url",
@@ -376,7 +375,7 @@ function sendGenericMessage2(sender) {
                 "template_type": "generic",
                 "elements": [{
                     "title": "Alba Botanica",
-                    "subtitle": "Element #2 of an hscroll",
+                    "subtitle": "Keeping your skin youthful",
                     "image_url": "http://scene7.targetimg1.com/is/image/Target/16872833?wid=1024&hei=1024&qlt=70&fmt=pjpeg",
                     "buttons": [{
                         "type": "web_url",
@@ -389,7 +388,7 @@ function sendGenericMessage2(sender) {
                     }],
                 }, {
                     "title": "Neutrogena Beach Defense",
-                    "subtitle": "Element #2 of an hscroll",
+                    "subtitle": "Protecting your skin on the go!",
                     "image_url": "http://scene7.targetimg1.com/is/image/Target/50787513?wid=450&hei=450&fmt=pjpeg",
                     "buttons": [{
                         "type": "web_url",
@@ -402,8 +401,74 @@ function sendGenericMessage2(sender) {
                     }],
                 }, {
                     "title": "Coppertone Kids",
-                    "subtitle": "Element #2 of an hscroll",
+                    "subtitle": "Sun protection made easy!",
                     "image_url": "http://scene7.targetimg1.com/is/image/Target/50584700?wid=1024&hei=1024&qlt=70&fmt=pjpeg",
+                    "buttons": [{
+                        "type": "web_url",
+                        "url": "http://www.target.com/p/coppertone-kids-sunscreen-continuous-spray-spf-50/-/A-50584700",
+                        "title": "See Item",
+                    }, {
+                    	"type": "postback",
+                        "title": "Add to Cart",
+                        "payload": "add to shopping cart",
+                    }],
+                }]
+            }
+        }
+    }
+    request({
+        url: 'https://graph.facebook.com/v2.6/me/messages',
+        qs: {access_token:token},
+        method: 'POST',
+        json: {
+            recipient: {id:sender},
+            message: messageData,
+        }
+    }, function(error, response, body) {
+        if (error) {
+            console.log('Error sending messages: ', error)
+        } else if (response.body.error) {
+            console.log('Error: ', response.body.error)
+        }
+    })
+}
+
+function sendGenericMessage3(sender) {
+    let messageData = {
+        "attachment": {
+            "type": "template",
+            "payload": {
+                "template_type": "generic",
+                "elements": [{
+                    "title": "Organically-Made Pajamas",
+                    "subtitle": "Keeping your baby comfy throughout the night",
+                    "image_url": "http://target.scene7.com/is/image/Target/51186963?wid=450&hei=450&fmt=pjpeg",
+                    "buttons": [{
+                        "type": "web_url",
+                        "url": "http://www.target.com/p/lamaze-baby-waffle-footed-sleeper-red/-/A-51261899",
+                        "title": "See Item"
+                    }, {
+                        "type": "postback",
+                        "title": "Add to Cart",
+                        "payload": "add to shopping cart",
+                    }],
+                }, {
+                    "title": "Baby Boys' 4 Piece: Cat & Jack",
+                    "subtitle": "Providing style and comfort",
+                    "image_url": "http://target.scene7.com/is/image/Target/50897885?wid=450&hei=450&fmt=pjpeg",
+                    "buttons": [{
+                        "type": "web_url",
+                        "url": "http://www.target.com/p/baby-boys-4-piece-tiger-set-baby-cat-jack-turquoise-white/-/A-51112241",
+                        "title": "See Item",
+                    }, {
+                    	"type": "postback",
+                        "title": "Add to Cart",
+                        "payload": "add to shopping cart",
+                    }],
+                }, {
+                    "title": "Burt's Bees Infant 2 Pack",
+                    "subtitle": "Ready to rock and roll!",
+                    "image_url": "http://www.target.com/p/burt-s-bees-baby-infant-boys-2-pack-bodysuit-camo-striped/-/A-50363847",
                     "buttons": [{
                         "type": "web_url",
                         "url": "http://www.target.com/p/coppertone-kids-sunscreen-continuous-spray-spf-50/-/A-50584700",
