@@ -45,7 +45,6 @@ function decideMessage(sender, text1) {
 	let text = text1.toLowerCase();
 	if (text.includes("baby shower") && text.includes("throwing")) {
 		sendTextMessage(sender, "Are you looking for decorations?");
-		sendGenericMessage(sender)
 	} else if (text.includes("add to shopping cart")) {
 		sendTextMessage(sender, "Added to shopping cart!")
 	} else if (text.includes("no")) {
