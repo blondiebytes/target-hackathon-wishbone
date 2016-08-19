@@ -34,7 +34,6 @@ app.post('/webhook/', function (req, res) {
         if (event.message && event.message.text) {
             let text = event.message.text
             decideMessage(sender, text);
-            sendTextMessage(sender, "Text received, echo: ")
         }
     }
     res.sendStatus(200)
@@ -50,7 +49,9 @@ function decideMessage(sender, text1) {
 	} else if (text.includes("add to shopping cart")) {
 		sendTextMessage(sender, "Added to shopping cart!")
 	} else if (text.includes("no")) {
-		sendButtonMessage(sender, "I see it's summertime. Here are some things you might need.")
+		sendButtonMessage(sender, "I see it's summertime. Here are some things you might need for your baby shower.")
+	} else {
+		sendTextMessage(sender, "Can you ask again?");
 	}
 }
 
@@ -112,54 +113,7 @@ function sendTextMessage(sender, text) {
     })
 }
 
-function sendGenericMessage(sender) {
-    let messageData = {
-        "attachment": {
-            "type": "template",
-            "payload": {
-                "template_type": "generic",
-                "elements": [{
-                    "title": "Decoration 1",
-                    "subtitle": "Subtitle 1",
-                    "image_url": "http://messengerdemo.parseapp.com/img/rift.png",
-                    "buttons": [{
-                        "type": "web_url",
-                        "url": "See More",
-                        "title": "web url"
-                    }, {
-                        "type": "postback",
-                        "title": "Add to Cart",
-                        "payload": "add to shopping cart",
-                    }],
-                }, {
-                    "title": "Decoration 2",
-                    "subtitle": "Subtitle 2",
-                    "image_url": "http://messengerdemo.parseapp.com/img/gearvr.png",
-                    "buttons": [{
-                        "type": "postback",
-                        "title": "Add to Cart",
-                        "payload": "add to shopping cart",
-                    }],
-                }]
-            }
-        }
-    }
-    request({
-        url: 'https://graph.facebook.com/v2.6/me/messages',
-        qs: {access_token:token},
-        method: 'POST',
-        json: {
-            recipient: {id:sender},
-            message: messageData,
-        }
-    }, function(error, response, body) {
-        if (error) {
-            console.log('Error sending messages: ', error)
-        } else if (response.body.error) {
-            console.log('Error: ', response.body.error)
-        }
-    })
-}
+
 
 // Spin up the server
 app.listen(app.get('port'), function() {
