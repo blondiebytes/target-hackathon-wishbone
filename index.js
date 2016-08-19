@@ -328,10 +328,6 @@ function sendGenericMessage1(sender) {
                         "type": "web_url",
                         "url": "http://www.target.com/c/baby-shower-party-supplies/-/N-4soei%7Cd_item_type_all%3Ainvitation%20packs?Sort=Featured&clearCategId=4soei&Nao=0",
                         "title": "See Items Like"
-                    }, {
-                        "type": "postback",
-                        "title": "Add to Cart",
-                        "payload": "add to shopping cart",
                     }],
                 }, {
                     "title": "Favor Bags",
@@ -341,10 +337,6 @@ function sendGenericMessage1(sender) {
                         "type": "web_url",
                         "url": "http://www.target.com/c/baby-shower-party-supplies/-/N-4soei%7Cd_item_type_all%3AFavor%20Bag?Sort=Featured&clearCategId=4soei&Nao=0",
                         "title": "See Items Like",
-                    }, {
-                    	"type": "postback",
-                        "title": "Add to Cart",
-                        "payload": "add to shopping cart",
                     }],
                 }]
             }
