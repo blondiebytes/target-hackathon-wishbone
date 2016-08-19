@@ -468,10 +468,10 @@ function sendGenericMessage3(sender) {
                 }, {
                     "title": "Burt's Bees Infant 2 Pack",
                     "subtitle": "Ready to rock and roll!",
-                    "image_url": "http://www.target.com/p/burt-s-bees-baby-infant-boys-2-pack-bodysuit-camo-striped/-/A-50363847",
+                    "image_url": "http://target.scene7.com/is/image/Target/50363846?wid=1024&hei=1024&qlt=70&fmt=pjpeg",
                     "buttons": [{
                         "type": "web_url",
-                        "url": "http://www.target.com/p/coppertone-kids-sunscreen-continuous-spray-spf-50/-/A-50584700",
+                        "url": "http://www.target.com/p/burt-s-bees-baby-infant-boys-2-pack-bodysuit-camo-striped/-/A-50363847",
                         "title": "See Item",
                     }, {
                     	"type": "postback",
