@@ -56,14 +56,14 @@ function decideMessage(sender, text1) {
 		sendTextMessage(sender, "Added to shopping cart!")
 	} else if (text.includes("no")) {
 		sendButtonMessage(sender, "I see it's summertime. Here are some things you might need for your baby shower.")
-	} else if (text.includes("sunscreen") {
+	} else if (text.includes("sunscreen")) {
 		sendTextMessage(sender, "Here are some great deals on sunscreen!");
 		//sendGenericMessage2(sender);
-	} else if (text.includes("gift") {
+	} else if (text.includes("gift")) {
 		sendButtonMessage2(sender, "What is the occasion?");
-	} else if (text.includes("baby shower") {
+	} else if (text.includes("baby shower")) {
 		sendButtonMessage3(sender, "What's your price range?")
-	} else if (text.includes("$15 - $50") {
+	} else if (text.includes("$15 - $50")) {
 		sendButtonMessage4(sender, "Here are some customer favorites!")
 	} else if (text.includes("clothes")) {
 		sendTextMessage(sender, "Boy or girl?")
