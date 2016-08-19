@@ -324,10 +324,10 @@ function sendGenericMessage1(sender) {
                 "elements": [{
                     "title": "Invitations",
                     "subtitle": "Element #2 of an hscroll",
-                    "image_url": "http://messengerdemo.parseapp.com/img/rift.png",
+                    "image_url": "http://scene7.targetimg1.com/is/image/Target/50631105?wid=1024&hei=1024&qlt=70&fmt=pjpeg",
                     "buttons": [{
                         "type": "web_url",
-                        "url": "https://www.messenger.com",
+                        "url": "http://www.target.com/p/baby-shower-pink-dessert-plates-8-count/-/A-50631105",
                         "title": "web url"
                     }, {
                         "type": "postback",
