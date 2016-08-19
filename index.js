@@ -324,7 +324,7 @@ function sendGenericMessage1(sender) {
                 "elements": [{
                     "title": "Invitations",
                     "subtitle": "Here's our most popular invitation",
-                    "image_url": "http://scene7.targetimg1.com/is/image/Target/15406466?wid=1024&hei=1024&qlt=70&fmt=pjpeg",
+                    "image_url": "http://messengerdemo.parseapp.com/img/rift.png",
                     "buttons": [{
                         "type": "web_url",
                         "url": "http://www.target.com/p/pink-baby-dots-invitations-with-photo-overlay-25-count/-/A-15406466",
