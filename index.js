@@ -43,7 +43,7 @@ app.post('/webhook/', function (req, res) {
 const token = "EAADPuY7AusgBAL5wNKMrokW32BgDCVESDwtXp0u4ytJ0gmxHB9LISBwGW2y6XFEi3oBgNFb0BqMbV89d80DUqfZBV4Ln4ttZBsKOg1alqDqaNA1Wlx4ZAFQOZBAj7iquLpmTcEEcDs6FriESRU0WTQ99TAECWB4UNWArcqGIhAZDZD"
 
 function decideMessage(sender, text1) {
-	text = text1.toLowerCase();
+	let text = text1.toLowerCase();
 	if (text.includes("trip") && text.includes("minneapolis")) {
 		sendTextMessage(sender, "ok")
 	} else {
