@@ -324,15 +324,15 @@ function sendGenericMessage1(sender) {
                 "elements": [{
                     "title": "Invitations",
                     "subtitle": "Element #2 of an hscroll",
-                    "image_url": "http://scene7.targetimg1.com/is/image/Target/50631105?wid=1024&hei=1024&qlt=70&fmt=pjpeg",
+                    "image_url": "http://scene7.targetimg1.com/is/image/Target/15406466?wid=1024&hei=1024&qlt=70&fmt=pjpeg",
                     "buttons": [{
                         "type": "web_url",
-                        "url": "http://www.target.com/p/baby-shower-pink-dessert-plates-8-count/-/A-50631105",
-                        "title": "web url"
+                        "url": "http://www.target.com/p/pink-baby-dots-invitations-with-photo-overlay-25-count/-/A-15406466",
+                        "title": "See Item"
                     }, {
                         "type": "postback",
-                        "title": "Postback",
-                        "payload": "Payload for first element in a generic bubble",
+                        "title": "Add to Cart",
+                        "payload": "add to shopping cart",
                     }],
                 }, {
                     "title": "Second card",
