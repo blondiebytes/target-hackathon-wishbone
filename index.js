@@ -341,7 +341,11 @@ function sendGenericMessage1(sender) {
                     "buttons": [{
                         "type": "web_url",
                         "url": "http://www.target.com/p/pink-baby-dots-invitations-with-photo-overlay-25-count/-/A-15406466",
-                        "title": "Favor bag",
+                        "title": "See Item",
+                    }, {
+                    	"type": "postback",
+                        "title": "Add to Cart",
+                        "payload": "add to shopping cart",
                     }],
                 }]
             }
