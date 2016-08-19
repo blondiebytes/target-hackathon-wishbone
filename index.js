@@ -34,7 +34,13 @@ app.post('/webhook/', function (req, res) {
         if (event.message && event.message.text) {
             let text = event.message.text
             decideMessage(sender, text);
+            continue
         }
+        if (event.postback) {
+        	let text = JSON.stringify(event.postback)
+        	sendTextMessage(sender, "Postback")
+        	continue
+      }
     }
     res.sendStatus(200)
 })
@@ -44,11 +50,26 @@ const token = "EAADPuY7AusgBAL5wNKMrokW32BgDCVESDwtXp0u4ytJ0gmxHB9LISBwGW2y6XFEi
 function decideMessage(sender, text1) {
 	let text = text1.toLowerCase();
 	if (text.includes("baby shower") && text.includes("throwing")) {
-		sendTextMessage(sender, "Are you looking for decorations?");
+		sendTextMessage(sender, "Congrats! Do you need anything for your baby shower?");
+		//sendGenericMessage1(sender)
 	} else if (text.includes("add to shopping cart")) {
 		sendTextMessage(sender, "Added to shopping cart!")
 	} else if (text.includes("no")) {
 		sendButtonMessage(sender, "I see it's summertime. Here are some things you might need for your baby shower.")
+	} else if (text.includes("sunscreen") {
+		sendTextMessage(sender, "Here are some great deals on sunscreen!");
+		//sendGenericMessage2(sender);
+	} else if (text.includes("gift") {
+		sendButtonMessage2(sender, "What is the occasion?");
+	} else if (text.includes("baby shower") {
+		sendButtonMessage3(sender, "What's your price range?")
+	} else if (text.includes("$15 - $50") {
+		sendButtonMessage4(sender, "Here are some customer favorites!")
+	} else if (text.includes("clothes")) {
+		sendTextMessage(sender, "Boy or girl?")
+	} else if (text.includes("boy")) {
+		sendButtonMessage5(sender, "Here are some essentials!")
+	} else if (text.includes("toys")) {
 	} else {
 		sendTextMessage(sender, "Can you ask again?");
 	}
@@ -64,13 +85,18 @@ function sendButtonMessage(sender, text) {
         "buttons":[
           {
             "type":"postback",
-            "title":"Start Chatting",
-            "payload":"USER_DEFINED_PAYLOAD"
+            "title":"Sunscreen",
+            "payload":"sunscreen"
           },
           {
             "type":"postback",
-            "title":"Start Chatting",
-            "payload":"USER_DEFINED_PAYLOAD"
+            "title":"Flip Flops",
+            "payload":"flip flops"
+          },
+          {
+            "type":"postback",
+            "title":"Sunglasses",
+            "payload":"sunglasses"
           }
         ]
       }
@@ -92,6 +118,183 @@ function sendButtonMessage(sender, text) {
         }
     })
 }
+
+function sendButtonMessage2(sender, text) {
+	let messageData = {
+    "attachment":{
+      "type":"template",
+      "payload":{
+        "template_type":"button",
+        "text":text,
+        "buttons":[
+          {
+            "type":"postback",
+            "title":"Baby Shower",
+            "payload":"baby shower"
+          },
+          {
+            "type":"postback",
+            "title":"Birthday",
+            "payload":"birthday"
+          },
+          {
+            "type":"postback",
+            "title":"Graduation",
+            "payload":"graduation"
+          }
+        ]
+      }
+    } 
+}
+     request({
+        url: 'https://graph.facebook.com/v2.6/me/messages',
+        qs: {access_token:token},
+        method: 'POST',
+        json: {
+            recipient: {id:sender},
+            message: messageData,
+        }
+    }, function(error, response, body) {
+        if (error) {
+            console.log('Error sending messages: ', error)
+        } else if (response.body.error) {
+            console.log('Error: ', response.body.error)
+        }
+    })
+}
+
+function sendButtonMessage3(sender, text) {
+	let messageData = {
+    "attachment":{
+      "type":"template",
+      "payload":{
+        "template_type":"button",
+        "text":text,
+        "buttons":[
+          {
+            "type":"postback",
+            "title":"$0 - $15",
+            "payload":"$0 - $15"
+          },
+          {
+            "type":"postback",
+            "title":"$15 - $50",
+            "payload":"$15 - $50"
+          },
+          {
+            "type":"postback",
+            "title":"$50 - $100",
+            "payload":"$50 - $100"
+          }
+        ]
+      }
+    } 
+}
+     request({
+        url: 'https://graph.facebook.com/v2.6/me/messages',
+        qs: {access_token:token},
+        method: 'POST',
+        json: {
+            recipient: {id:sender},
+            message: messageData,
+        }
+    }, function(error, response, body) {
+        if (error) {
+            console.log('Error sending messages: ', error)
+        } else if (response.body.error) {
+            console.log('Error: ', response.body.error)
+        }
+    })
+}
+
+function sendButtonMessage4(sender, text) {
+	let messageData = {
+    "attachment":{
+      "type":"template",
+      "payload":{
+        "template_type":"button",
+        "text":text,
+        "buttons":[
+          {
+            "type":"postback",
+            "title":"Clothes",
+            "payload":"clothes"
+          },
+          {
+            "type":"postback",
+            "title":"Stroller",
+            "payload":"stroller"
+          },
+          {
+            "type":"postback",
+            "title":"Toys",
+            "payload":"toys"
+          }
+        ]
+      }
+    } 
+}
+     request({
+        url: 'https://graph.facebook.com/v2.6/me/messages',
+        qs: {access_token:token},
+        method: 'POST',
+        json: {
+            recipient: {id:sender},
+            message: messageData,
+        }
+    }, function(error, response, body) {
+        if (error) {
+            console.log('Error sending messages: ', error)
+        } else if (response.body.error) {
+            console.log('Error: ', response.body.error)
+        }
+    })
+}
+
+function sendButtonMessage5(sender, text) {
+	let messageData = {
+    "attachment":{
+      "type":"template",
+      "payload":{
+        "template_type":"button",
+        "text":text,
+        "buttons":[
+          {
+            "type":"postback",
+            "title":"Shoes",
+            "payload":"shoes"
+          },
+          {
+            "type":"postback",
+            "title":"Clothes",
+            "payload":"clothes"
+          },
+          {
+            "type":"postback",
+            "title":"Toys",
+            "payload":"toys"
+          }
+        ]
+      }
+    } 
+}
+     request({
+        url: 'https://graph.facebook.com/v2.6/me/messages',
+        qs: {access_token:token},
+        method: 'POST',
+        json: {
+            recipient: {id:sender},
+            message: messageData,
+        }
+    }, function(error, response, body) {
+        if (error) {
+            console.log('Error sending messages: ', error)
+        } else if (response.body.error) {
+            console.log('Error: ', response.body.error)
+        }
+    })
+}
+
 
 function sendTextMessage(sender, text) {
     let messageData = { text:text }
