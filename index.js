@@ -337,10 +337,10 @@ function sendGenericMessage1(sender) {
                 }, {
                     "title": "Favor Bags",
                     "subtitle": "Element #2 of an hscroll",
-                    "image_url": "http://messengerdemo.parseapp.com/img/gearvr.png",
+                    "image_url": "http://scene7.targetimg1.com/is/image/Target/50701956?wid=450&hei=450&fmt=pjpeg",
                     "buttons": [{
                         "type": "web_url",
-                        "url": "http://www.target.com/p/pink-baby-dots-invitations-with-photo-overlay-25-count/-/A-15406466",
+                        "url": "http://www.target.com/p/favor-bag-8-ea-multi-colored-creative-converting/-/A-50701956",
                         "title": "See Item",
                     }, {
                     	"type": "postback",
