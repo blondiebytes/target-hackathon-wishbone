@@ -45,7 +45,9 @@ const token = "EAADPuY7AusgBAL5wNKMrokW32BgDCVESDwtXp0u4ytJ0gmxHB9LISBwGW2y6XFEi
 function decideMessage(sender, text1) {
 	text = text1.toLowerCase();
 	if (text.includes("trip") && text.includes("minneapolis")) {
-		sendTextMessage(sender, "It's going to be cold and rainy so you'll probably need:")
+		sendTextMessage(sender, "ok")
+	} else {
+		sendTextMessage(sender, "sure")
 	}
 }
 
