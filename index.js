@@ -46,9 +46,11 @@ function decideMessage(sender, text1) {
 	let text = text1.toLowerCase();
 	if (text.includes("baby shower") && text.includes("throwing")) {
 		sendTextMessage(sender, "Are you looking for decorations?");
-		sendGenericMessage(sender)
+		sendGenericMessage(sender);
 	} else if (text.includes("add to shopping cart")) {
 		sendTextMessage(sender, "Added to shopping cart!")
+	} else if (text.includes("no")) {
+		sendButtonMessage(sender, "I see it's summertime. Here are some things you might need.")
 	}
 }
 
@@ -58,12 +60,12 @@ function sendButtonMessage(sender, text) {
       "type":"template",
       "payload":{
         "template_type":"button",
-        "text":"What do you want to do next?",
+        "text":text,
         "buttons":[
           {
-            "type":"web_url",
-            "url":"https://petersapparel.parseapp.com",
-            "title":"Show Website"
+            "type":"postback",
+            "title":"Start Chatting",
+            "payload":"USER_DEFINED_PAYLOAD"
           },
           {
             "type":"postback",
