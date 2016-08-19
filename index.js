@@ -47,7 +47,7 @@ function decideMessage(sender, text1) {
 	if (text.includes("trip") && text.includes("minneapolis")) {
 		sendTextMessage(sender, "ok")
 	} else {
-		sendTextMessage(sender, "sure")
+		sendButtonMessage(sender, text)
 	}
 }
 
@@ -71,7 +71,8 @@ function sendButtonMessage(sender, text) {
           }
         ]
       }
-    } }
+    } 
+}
      request({
         url: 'https://graph.facebook.com/v2.6/me/messages',
         qs: {access_token:token},
