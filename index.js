@@ -44,8 +44,11 @@ const token = "EAADPuY7AusgBAL5wNKMrokW32BgDCVESDwtXp0u4ytJ0gmxHB9LISBwGW2y6XFEi
 
 function decideMessage(sender, text1) {
 	let text = text1.toLowerCase();
-	if (text.includes("baby shower")) {
-		sendButtonMessage(sender, text)
+	if (text.includes("baby shower") && text.includes("throwing")) {
+		sendTextMessage(sender, "Are you looking for decorations?");
+		sendGenericMessage(sender)
+	} else if (text.includes("add to shopping cart")) {
+		sendTextMessage(sender, "Added to shopping cart!")
 	}
 }
 
@@ -90,6 +93,55 @@ function sendButtonMessage(sender, text) {
 
 function sendTextMessage(sender, text) {
     let messageData = { text:text }
+    request({
+        url: 'https://graph.facebook.com/v2.6/me/messages',
+        qs: {access_token:token},
+        method: 'POST',
+        json: {
+            recipient: {id:sender},
+            message: messageData,
+        }
+    }, function(error, response, body) {
+        if (error) {
+            console.log('Error sending messages: ', error)
+        } else if (response.body.error) {
+            console.log('Error: ', response.body.error)
+        }
+    })
+}
+
+function sendGenericMessage(sender) {
+    let messageData = {
+        "attachment": {
+            "type": "template",
+            "payload": {
+                "template_type": "generic",
+                "elements": [{
+                    "title": "Decoration 1",
+                    "subtitle": "Subtitle 1",
+                    "image_url": "http://messengerdemo.parseapp.com/img/rift.png",
+                    "buttons": [{
+                        "type": "web_url",
+                        "url": "See More",
+                        "title": "web url"
+                    }, {
+                        "type": "postback",
+                        "title": "Add to Cart",
+                        "payload": "add to shopping cart",
+                    }],
+                }, {
+                    "title": "Decoration 2",
+                    "subtitle": "Subtitle 2",
+                    "image_url": "http://messengerdemo.parseapp.com/img/gearvr.png",
+                    "buttons": [{
+                        "type": "postback",
+                        "title": "Add to Cart",
+                        "payload": "add to shopping cart",
+                    }],
+                }]
+            }
+        }
+    }
     request({
         url: 'https://graph.facebook.com/v2.6/me/messages',
         qs: {access_token:token},
