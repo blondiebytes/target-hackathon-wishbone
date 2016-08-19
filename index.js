@@ -335,13 +335,13 @@ function sendGenericMessage1(sender) {
                         "payload": "add to shopping cart",
                     }],
                 }, {
-                    "title": "Second card",
+                    "title": "Favor Bags",
                     "subtitle": "Element #2 of an hscroll",
                     "image_url": "http://messengerdemo.parseapp.com/img/gearvr.png",
                     "buttons": [{
-                        "type": "postback",
-                        "title": "Postback",
-                        "payload": "Payload for second element in a generic bubble",
+                        "type": "web_url",
+                        "url": "http://www.target.com/p/pink-baby-dots-invitations-with-photo-overlay-25-count/-/A-15406466",
+                        "title": "Favor bag",
                     }],
                 }]
             }
