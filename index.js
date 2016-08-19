@@ -323,12 +323,12 @@ function sendGenericMessage1(sender) {
                 "template_type": "generic",
                 "elements": [{
                     "title": "Invitations",
-                    "subtitle": "Here's our most popular invitation",
+                    "subtitle": "sendButtonMessage3",
                     "image_url": "http://messengerdemo.parseapp.com/img/rift.png",
                     "buttons": [{
                         "type": "web_url",
-                        "url": "http://www.target.com/p/pink-baby-dots-invitations-with-photo-overlay-25-count/-/A-15406466",
-                        "title": "See Item"
+                        "url": "https://www.messenger.com",
+                        "title": "web url"
                     }, {
                         "type": "postback",
                         "title": "Postback",
