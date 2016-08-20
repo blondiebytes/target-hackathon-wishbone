@@ -71,7 +71,7 @@ var specificItems = {
             subtitle: "Keeping your skin youthful",
             image_url: "http://scene7.targetimg1.com/is/image/Target/16872833?wid=1024&hei=1024&qlt=70&fmt=pjpeg",
             url: "http://www.target.com/p/alba-botanica-emollient-sunscreen-active-kids-clear-spray-spf-50-6-oz/-/A-16872833",
-            button_title: "See Item",
+            button_title_1: "See Item",
             button_title_2: "Add to Cart"
         },
          sunscreen2: {
@@ -79,7 +79,15 @@ var specificItems = {
             subtitle: "Protecting your skin on the go!",
             image_url: "http://scene7.targetimg1.com/is/image/Target/50787513?wid=450&hei=450&fmt=pjpeg",
             url: "http://www.target.com/p/neutrogena-oh-joy-beach-defense-spray-sunscreen-broad-spectrum-spf-70-6-5-oz/-/A-50787513",
-            button_title: "See Item",
+            button_title_1: "See Item",
+            button_title_2: "Add to Cart"
+        },
+        sunscreen3: {
+            header: "Coppertone Kids",
+            subtitle: "Sun protection made easy!",
+            image_url: "http://scene7.targetimg1.com/is/image/Target/50584700?wid=1024&hei=1024&qlt=70&fmt=pjpeg",
+            url: "http://www.target.com/p/coppertone-kids-sunscreen-continuous-spray-spf-50/-/A-50584700",
+            button_title_1: "See Item",
             button_title_2: "Add to Cart"
         }
     },
@@ -125,7 +133,7 @@ function decideMessage(sender, text1) {
 		sendButtonMessage(sender, "I see it's summertime. Here are some things you might need.", "Sunscreen", "Flip Flops", "Sunglasses")
 	} else if (text.includes("sunscreen")) {
 		sendTextMessage(sender, "Here are some great deals on sunscreen!");
-	    send2TypesOfItems(sender, specificItems.sunscreen.sunscreen1, specificItems.sunscreen.sunscreen2);
+	    send3SpecificItems(sender, specificItems.infant_boy_clothing.clothing1, specificItems.infant_boy_clothing.clothing2, specificItems.infant_boy_clothing.clothing3)
 	} else if (text.includes("gift")) {
 		sendButtonMessage(sender, "What is the occasion?", "Baby Shower", "Birthday", "Graduation");
 	} else if (text.includes("baby shower")) {
