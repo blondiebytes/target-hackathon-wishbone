@@ -228,16 +228,7 @@ function send2TypesOfItems(sender, obj1, obj2) {
                         "url": obj1.url,
                         "title": obj1.button_title
                     }],
-                }, {
-                    "title": obj2.header,
-                    "subtitle": obj2.subtitle,
-                    "image_url": obj2.image_url,
-                    "buttons": [{
-                        "type": "web_url",
-                        "url": obj2.url,
-                        "title": obj2.button_title
-                    }],
-                }]
+                } ]
             }
         }
     }
