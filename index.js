@@ -133,7 +133,7 @@ function decideMessage(sender, text1) {
 		sendButtonMessage(sender, "I see it's summertime. Here are some things you might need.", "Sunscreen", "Flip Flops", "Sunglasses")
 	} else if (text.includes("sunscreen")) {
 		sendTextMessage(sender, "Here are some great deals on sunscreen!");
-	    send3SpecificItems(sender, specificItems.infant_boy_clothing.clothing1, specificItems.infant_boy_clothing.clothing2, specificItems.infant_boy_clothing.clothing3)
+	    send3SpecificItems(sender, specificItems.infant_boy_clothing.clothing1, specificItems.infant_boy_clothing.clothing2, specificItems.sunscreen.sunscreen3)
 	} else if (text.includes("gift")) {
 		sendButtonMessage(sender, "What is the occasion?", "Baby Shower", "Birthday", "Graduation");
 	} else if (text.includes("baby shower")) {
