@@ -13,4 +13,4 @@ Antonio Melano-Gonzales: Helped determine how users would interact with the bot 
 
 Dilan Hira & Adamma Newman: Researched chatbots and created the powerpoint presentation.
 
-Check out the demo here: (https://youtu.be/os6qu4w5wqk)
+Check out the demo [here](https://youtu.be/os6qu4w5wqk)
