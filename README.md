@@ -1,4 +1,4 @@
-# Target-Hackathon/Case Study: Wishbone
+# Target Hackathon/Case Study: Wishbone
 
 ## The Task:
 As a part of Target's Diversity Leadership Symposium, participants were asked to create an application that engages guests both inside and outside the store. Specifically, developers should target the millennial market by focusing on baby and styling products. We were given three hours total. 
